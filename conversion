@@ -10,24 +10,24 @@ def convert(text):
     romaji = ["a", "i", "u", "e", "o"]    #ひらがなに対するローマ字のリスト
 
     output = ""    #outputという変数を作り，""で文字列を空にしている
-    i = 0    #処理している文字の場所
+    i = 0    #処理している文字の位置を示している
 
-    while i < len(text):    #標準入力から受け取った文字列の長さを超えるまで処理を続ける
-        for k in range(len(hiragana)):    #標準入力から得たひらがなのリストの長さを数値にしてkに代入する
-            if text.startswith(hiragana[k], i):    #文字列の位置がひらがなのリストのどれに一致するかを調べて，iをその長さ分進める
-                output += romaji[k]    #一致した時，ひらがなに対応するローマ字を追加する
-                i += len(hiragana[k])    #探すひらがなを１文字進める
+    while i < len(text):    #文字列の長さを超えるまで処理を続ける
+        for k in range(len(hiragana)):    #ひらがなのリストの長さを数値にしてkに代入する
+            if text.startswith(hiragana[k], i):    #現在の位置から，ひらがなが一致するかを調べる
+                output += romaji[k]    #一致したひらがなに対応するローマ字を追加する
+                i += len(hiragana[k])    #ひらがなを１文字進める
                 break
 
         else:
-            output += text[i]    #ひらがなのリストになかった場合，その文字をそのまま追加する
+            output += text[i]    #ひらがなのリストになかった場合，その文字をoutputに追加する
             i += 1    #次の文字の処理を始める
 
     return output
 
 
 for text in sys.stdin:    #標準入力を読み取り，textに格納する
-    if text.strip():    #textに入力があったら関数を呼び出し，その結果をoutextに格納し，print関数でターミナルに表示する
+    if text.strip():    #textに入力があったら関数を呼び出し，その結果をoutextに格納する
         txt = convert(text)
         print(txt)
         break
