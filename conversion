@@ -1,0 +1,38 @@
+#!/usr/bin/python3
+# SPDX-FileCopyrightText: 2024 Reo Isaka
+# SPDX-License-Identifier: BSD-3-Clause
+
+
+import sys
+
+def convert(intext):
+    hiragana = ["あ", "い", "う", "え", "お"]
+    romaji = ["a", "i", "u", "e", "o"]
+
+    output = ""
+    i = 0
+
+    while i < len(intext):
+        found = False
+
+
+        for k in range(len(hiragana)):
+            if text.startswith(hiragana[k], i):
+                output += romaji[k]
+                i += len(hiragana[k])
+                found = True
+                break
+
+        if not found:
+            output += intext[i]
+            i += 1
+
+    return output
+
+
+for text in sys.stdin:
+    text = text.strip()
+    if text:
+        outext = convert(text)
+        print(outext)
+        break
