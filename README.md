@@ -21,9 +21,10 @@
 
 # 使用方法
 
-```https://github.com/reo422/robosys2024_homework.git```
-```cd robosys2024_homework```
-```echo おはよう | ./conversion```
+```bash
+git clone https://github.com/reo422/robosys2024_homework.git
+cd robosys2024_homework
+echo おはよう | ./conversion
 
 ohayou
 
@@ -35,7 +36,7 @@ ashitanotenkihaharedesu.
 
 # 必要なソフトウェア
 ・Python
-    ○ テスト済み: 3.7~3.10
+　　- テスト済み: 3.7~3.10
 
 # テスト環境
 ・Ubuntu 20.04 LTS
