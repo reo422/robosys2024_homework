@@ -20,12 +20,17 @@
 上記のひらがな以外の文字（数字，記号）は変換されず，そのまま出力されます．
 
 #使用方法
+---
 $ https://github.com/reo422/robosys2024_homework.git
+---
 $ cd robosys2024_homework
+---
 $ echo おはよう | ./conversion
+---
 ohayou
-
+---
 $ ./conversion
+---
 あしたのてんきははれです.
 ashitanotenkihaharedesu.
 
