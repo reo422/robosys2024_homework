@@ -22,11 +22,17 @@
 # 使用方法
 
 $ https://github.com/reo422/robosys2024_homework.git
+
 $ cd robosys2024_homework
+
 $ echo おはよう | ./conversion
+
 ohayou
+
 $ ./conversion
+
 あしたのてんきははれです.
+
 ashitanotenkihaharedesu.
 
 # 必要なソフトウェア
