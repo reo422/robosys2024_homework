@@ -1,2 +1,3 @@
 # robosys2024_homework
-ロボットシステム学の課題用
+![Build Status](https://github.com/reo422/robosys2024_homework/actions/workflows/test.yml/badge.svg)
+#機能
