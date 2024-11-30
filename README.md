@@ -21,15 +21,15 @@
 
 # 使用方法
 
-$ https://github.com/reo422/robosys2024_homework.git
+https://github.com/reo422/robosys2024_homework.git
 
-$ cd robosys2024_homework
+cd robosys2024_homework
 
-$ echo おはよう | ./conversion
+echo おはよう | ./conversion
 
 ohayou
 
-$ ./conversion
+./conversion
 
 あしたのてんきははれです.
 
