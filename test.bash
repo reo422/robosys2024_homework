@@ -76,6 +76,9 @@ out=$(echo ぱぴぷぺぽ | ./conversion)
 out=$(echo "" | ./conversion)
 [ "${out}" = "" ] || ng "$LINENO"
 
+#言葉の確認
+out=$(echo あしたのてんきははれです | ./conversion)
+[ "${out}" = "ashitanotenkihaharedesu" ] || ng "$LINENO"
 
 ### 変な動作 ###
 
@@ -88,7 +91,11 @@ out=$(echo hello | ./conversion)
 [ "${out}" = "エラー: 無効な文字が含まれています．" ] || ng "$LINENO"
 
 #カタカナが入力されたとき
-out=$(echo コンニチハ | ./conversion)
+out=$(echo セカイ | ./conversion)
+[ "${out}" = "エラー: 無効な文字が含まれています．" ] || ng "$LINENO"
+
+#漢字が入力されたとき
+out=$(echo 世界 | ./conversion)
 [ "${out}" = "エラー: 無効な文字が含まれています．" ] || ng "$LINENO"
 
 #記号があるとき
@@ -104,7 +111,11 @@ out=$(echo "こんにちはworld" | ./conversion)
 [ "${out}" = "エラー: 無効な文字が含まれています．" ] || ng "$LINENO"
 
 #ひらがなとカタカナがあるとき
-out=$(echo "こんにちはコンニチハ" | ./conversion)
+out=$(echo "こんにちはセカイ" | ./conversion)
+[ "${out}" = "エラー: 無効な文字が含まれています．" ] || ng "$LINENO"
+
+#ひらがなと漢字があるとき
+out=$(echo "こんにちは世界" | ./conversion)
 [ "${out}" = "エラー: 無効な文字が含まれています．" ] || ng "$LINENO"
 
 #ひらがなと記号があるとき
@@ -120,7 +131,11 @@ out=$(echo "worldこんにちは" | ./conversion)
 [ "${out}" = "エラー: 無効な文字が含まれています．" ] || ng "$LINENO"
 
 #カタカナとひらがながあるとき
-out=$(echo "コンニチハこんにちは" | ./conversion)
+out=$(echo "セカイこんにちは" | ./conversion)
+[ "${out}" = "エラー: 無効な文字が含まれています．" ] || ng "$LINENO"
+
+#漢字とひらがながあるとき
+out=$(echo "世界こんにちは" | ./conversion)
 [ "${out}" = "エラー: 無効な文字が含まれています．" ] || ng "$LINENO"
 
 #記号とひらがながあるとき
@@ -136,7 +151,11 @@ out=$(echo "こんにworldちは" | ./conversion)
 [ "${out}" = "エラー: 無効な文字が含まれています．" ] || ng "$LINENO"
 
 #ひらがなとカタカナがあるとき
-out=$(echo "こんにコンニチハちは" | ./conversion)
+out=$(echo "こんにセカイちは" | ./conversion)
+[ "${out}" = "エラー: 無効な文字が含まれています．" ] || ng "$LINENO"
+
+#ひらがなと漢字があるとき
+out=$(echo "こんに世界ちは" | ./conversion)
 [ "${out}" = "エラー: 無効な文字が含まれています．" ] || ng "$LINENO"
 
 #ひらがなと記号があるとき
