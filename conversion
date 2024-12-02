@@ -21,7 +21,7 @@ def convert(text):
                 matched = True    #ひらがなが一致した時にTrueになる
                 break
 
-        if not matched:    #ひらがなに一致しなかった時に処理を始める
+        if not matched:    #一致しなかった時に処理を始める
             print("エラー: 無効な文字が含まれています．")
             sys.exit(1)
             
