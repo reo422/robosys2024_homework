@@ -35,7 +35,7 @@ ashitanotenkihaharedesu.
 ・Python - テスト済み: 3.7~3.10
 
 # テスト環境
-・Ubuntu 20.04 LTS
+・Ubuntu 20.04
 
 # ライセンスと著作権
 このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
