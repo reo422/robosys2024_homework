@@ -13,21 +13,24 @@ def convert(text):
     i = 0    #処理している文字の位置を示している
 
     while i < len(text):    #文字列の長さを超えるまで処理を続ける
+        matched = False    #初期化
         for k in range(len(hiragana)):    #ひらがなのリストの長さを数値にしてkに代入する
             if text.startswith(hiragana[k], i):    #現在の位置から，ひらがなが一致するかを調べる
                 output += romaji[k]    #一致したひらがなに対応するローマ字を追加する
                 i += len(hiragana[k])    #ひらがなを１文字進める
+                matched = True    #ひらがなが一致した時にTrueになる
                 break
 
-        else:
-            output += text[i]    #ひらがなのリストになかった場合，その文字をoutputに追加する
-            i += 1    #次の文字の処理を始める
+        if not matched:    #ひらがなに一致しなかった時に処理を始める
+            print("エラー: 無効な文字が含まれています．")
+            sys.exit(1)
+            
 
     return output
 
 
 for text in sys.stdin:    #標準入力を読み取り，textに格納する
     if text.strip():    #textに入力があったら関数を呼び出し，その結果をoutextに格納する
-        txt = convert(text)
+        txt = convert(text.strip())
         print(txt)
         break
