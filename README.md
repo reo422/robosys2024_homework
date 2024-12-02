@@ -32,7 +32,7 @@ $ ./conversion
 ashitanotenkihaharedesu.
 ```
 # 必要なソフトウェア
-・Python - テスト済み: 3.7~3.10
+・Python - テスト済み: 3.7~3.11
 
 # テスト環境
 ・Ubuntu 20.04
